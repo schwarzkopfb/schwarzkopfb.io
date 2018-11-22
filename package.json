@@ -1,0 +1,26 @@
+{
+  "name": "schwarzkopfb.io",
+  "version": "1.0.0",
+  "description": "Personal Home Page",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.16.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server",
+    "build": "lessc public/assets/css/app.less public/assets/css/app.css",
+    "dev": "npm run build && npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/schwarzkopfb/schwarzkopfb.io.git"
+  },
+  "author": "Balazs Svarczkopf",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/schwarzkopfb/schwarzkopfb.io/issues"
+  },
+  "homepage": "https://github.com/schwarzkopfb/schwarzkopfb.io#readme"
+}
