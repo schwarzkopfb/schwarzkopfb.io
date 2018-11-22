@@ -2,7 +2,8 @@
 
 const { resolve } = require('path'),
       express = require('express'),
-      app = express()
+      app = express(),
+      port = process.env.PORT || 3000
 
 function serve(res, ...paths) {
     res.sendFile(resolve(__dirname, 'public', ...paths))
@@ -16,4 +17,4 @@ app.get('/content/:page', (req, res) => serve(res, 'assets', 'content', req.para
 
 app.all('*', (req, res) => res.redirect('/'))
 
-app.listen(3000, () => console.log('server is ready to accept connections on port 3000'))
+app.listen(port, () => console.log('server is ready to accept connections on port ' + port))
