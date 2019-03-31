@@ -2,7 +2,7 @@
   font-family: 'Varela Round';
   font-style: normal;
   font-weight: 400;
-  src: local('Varela Round Regular'), local('VarelaRound-Regular'), url(http://fonts.gstatic.com/s/varelaround/v10/w8gdH283Tvk__Lua32TysjIfp8uK.ttf) format('truetype');
+  src: local('Varela Round Regular'), local('VarelaRound-Regular'), url(https://fonts.gstatic.com/s/varelaround/v11/w8gdH283Tvk__Lua32TysjIfp8uK.ttf) format('truetype');
 }
 @-webkit-keyframes header-logo {
   from {
