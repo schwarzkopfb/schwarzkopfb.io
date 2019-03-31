@@ -4,7 +4,8 @@
   "description": "Personal Home Page",
   "main": "server.js",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "less": "^3.9.0"
   },
   "devDependencies": {},
   "scripts": {
