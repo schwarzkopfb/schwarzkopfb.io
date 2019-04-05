@@ -373,18 +373,12 @@ body header .background .menu-foreground {
 }
 body header .background .menu-foreground li {
   display: inline-block;
-  margin-right: 25px;
+  margin-right: 35px;
   font-weight: bold;
 }
 body header .background .menu-foreground li:first-child {
   height: 100%;
-  width: 225px;
-  margin-left: 90px;
-  margin-right: 60px;
-}
-body header .background .menu-foreground li:first-child a {
-  display: block;
-  background: transparent;
+  width: 195px;
 }
 body header .background .menu-foreground li a {
   font-size: 20px;
