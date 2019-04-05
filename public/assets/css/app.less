@@ -6,12 +6,17 @@
 @red: #e7543d;
 @blue: #48AAC0;
 
+.vendor(@property, @value) {
+    -webkit-@{property}: @value;
+     -khtml-@{property}: @value;
+       -moz-@{property}: @value;
+        -ms-@{property}: @value;
+         -o-@{property}: @value;
+            @{property}: @value;
+}
+
 .transition(@value) {
-  transition: @value;
-  -o-transition: @value;
-  -ms-transition: @value;
-  -moz-transition: @value;
-  -webkit-transition: @value;
+  .vendor(transition, @value);
 }
 
 .style(@content, @color) {
@@ -124,6 +129,8 @@ body {
 
     background: #fffffa;
     color: #484848;
+
+    .vendor(box-shadow, 0 0 30px #aaa);
 
     .background {
       position: absolute;
