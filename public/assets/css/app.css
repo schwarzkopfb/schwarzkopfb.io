@@ -4,46 +4,6 @@
   font-weight: 400;
   src: local('Varela Round Regular'), local('VarelaRound-Regular'), url(https://fonts.gstatic.com/s/varelaround/v11/w8gdH283Tvk__Lua32TysjIfp8uK.ttf) format('truetype');
 }
-@-webkit-keyframes header-logo {
-  from {
-    background-position: -369px center;
-  }
-  to {
-    background-position: -20px center;
-  }
-}
-@-moz-keyframes header-logo {
-  from {
-    background-position: -369px center;
-  }
-  to {
-    background-position: -20px center;
-  }
-}
-@-ms-keyframes header-logo {
-  from {
-    background-position: -369px center;
-  }
-  to {
-    background-position: -20px center;
-  }
-}
-@-o-keyframes header-logo {
-  from {
-    background-position: -369px center;
-  }
-  to {
-    background-position: -20px center;
-  }
-}
-@keyframes header-logo {
-  from {
-    background-position: -369px center;
-  }
-  to {
-    background-position: -20px center;
-  }
-}
 body {
   margin: 0;
   padding: 0;
@@ -339,21 +299,12 @@ body header .background {
   margin-left: -500px;
   width: 1000px;
   height: 420px;
-  background-image: url(/assets/image/logo-bg.png);
   background-color: #e7543d;
-  background-position: -20px center;
-  background-repeat: repeat;
-  background-attachment: fixed;
   transition: background-color 0.3s;
   -o-transition: background-color 0.3s;
   -ms-transition: background-color 0.3s;
   -moz-transition: background-color 0.3s;
   -webkit-transition: background-color 0.3s;
-  -webkit-animation: header-logo 20s linear infinite;
-  -moz-animation: header-logo 20s linear infinite;
-  -ms-animation: header-logo 20s linear infinite;
-  -o-animation: header-logo 20s linear infinite;
-  animation: header-logo 20s linear infinite;
 }
 body header .background .title {
   position: absolute;

@@ -6,56 +6,6 @@
 @red: #e7543d;
 @blue: #48AAC0;
 
-@-webkit-keyframes header-logo {
-  from {
-    background-position: -369px center;
-  }
-
-  to {
-    background-position: -20px center;
-  }
-}
-
-@-moz-keyframes header-logo {
-  from {
-    background-position: -369px center;
-  }
-
-  to {
-    background-position: -20px center;
-  }
-}
-
-@-ms-keyframes header-logo {
-  from {
-    background-position: -369px center;
-  }
-
-  to {
-    background-position: -20px center;
-  }
-}
-
-@-o-keyframes header-logo {
-  from {
-    background-position: -369px center;
-  }
-
-  to {
-    background-position: -20px center;
-  }
-}
-
-@keyframes header-logo {
-  from {
-    background-position: -369px center;
-  }
-
-  to {
-    background-position: -20px center;
-  }
-}
-
 .transition(@value) {
   transition: @value;
   -o-transition: @value;
@@ -183,19 +133,9 @@ body {
       margin-left: -500px;
       width: 1000px;
       height: 420px;
-      background-image: url(/assets/image/logo-bg.png);
       background-color: @red;
-      background-position: -20px center;
-      background-repeat: repeat;
-      background-attachment: fixed;
 
       .transition(background-color .3s);
-
-      -webkit-animation: header-logo 20s linear infinite;
-      -moz-animation: header-logo 20s linear infinite;
-      -ms-animation: header-logo 20s linear infinite;
-      -o-animation: header-logo 20s linear infinite;
-      animation: header-logo 20s linear infinite;
 
       .title {
           position: absolute;
