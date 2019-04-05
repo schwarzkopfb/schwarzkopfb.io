@@ -458,33 +458,6 @@ body .content hr {
   border-top: 1px solid #eee;
   overflow: hidden;
 }
-body .content .person {
-  margin: 50px;
-  display: inline-block;
-  text-align: center;
-  position: relative;
-}
-body .content .person:nth-child(even) {
-  top: 180px;
-}
-body .content .person .name {
-  display: block;
-  color: #1e1e1e;
-}
-body .content .person .job {
-  display: block;
-  font-size: 11px;
-  margin-top: 3px;
-}
-body .content .person .face {
-  width: 250px;
-  height: 250px;
-  margin-bottom: 15px;
-  border: 2px solid #48AAC0;
-  border-radius: 100%;
-  background-color: #fff;
-  background-size: cover;
-}
 body .layer {
   position: fixed;
   top: 0;
