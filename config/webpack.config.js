@@ -57,7 +57,7 @@ module.exports = {
         new VueLoaderPlugin,
         new HtmlWebpackPlugin({
             filename: resolve('dist/index.html'),
-            template: resolve('src/app.html'),
+            template: resolve('src/template/app.html'),
             hash: true
         })
     ],
