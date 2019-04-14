@@ -79,21 +79,19 @@ export default {
                 this.content = item.content
 
                 // tell Skrollr about content (and page size) change
-                this.$nextTick(() => 
+                this.$nextTick(() =>
                     this.skrollr.refresh()
                 )
             }
         }
     },
 
-    created() {
-        // select first menu item by default
-        this.currentMenuItem = this.menu[ 0 ]
-    },
-
     mounted() {
         // initialize Skrollr and store instance
         this.skrollr = skrollr.init({ forceHeight: false })
+
+        // select first menu item by default
+        this.currentMenuItem = this.menu[ 0 ]
 
         // adjust content layer position to window size
         this.adjustContentTop()
