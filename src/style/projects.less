@@ -1,3 +1,5 @@
+@import url('./utils');
+
 #counter {
   position: fixed;
   width: 100px;
@@ -23,11 +25,7 @@
     border-top: 2px solid #ffffff;
     overflow: hidden;
 
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -ms-box-sizing: border-box;
-    -o-box-sizing: border-box;
-    box-sizing: border-box;
+    .vendor(box-sizing, border-box);
 
     span {
       display: block;
@@ -43,11 +41,7 @@
         opacity: .7;
       }
 
-      -webkit-transform: rotate(-90deg);
-      -moz-transform: rotate(-90deg);
-      -ms-transform: rotate(-90deg);
-      -o-transform: rotate(-90deg);
-      transform: rotate(-90deg);
+      .vendor(transform, rotate(-90deg));
     }
   }
 }

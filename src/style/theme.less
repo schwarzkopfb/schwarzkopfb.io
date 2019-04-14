@@ -1,0 +1,73 @@
+@import './utils';
+
+.theme(@name, @color) {
+  &[data-theme=@{name}] {
+    ::selection {
+      background: @color;
+      color: #fff;
+    }
+
+    ::-moz-selection {
+      background: @color;
+      color: #fff;
+    }
+
+    header {
+      border-bottom-color: @color;
+
+      .background {
+        background-color: @color;
+
+        .title, .tagline {
+            color: @color;
+        }
+
+        .menu-foreground li a {
+          color: darken(@color, 5%);
+        }
+
+        .menu-foreground li a[data-theme="@{name}"] {
+          color: inherit;
+        }
+      }
+    }
+
+    .content {
+      h2 {
+        &:before, &:after {
+          color: @color;
+        }
+      }
+
+      hr {
+        border-bottom-color: lighten(@color, 10%);
+      }
+    }
+
+    .hex {
+      background-color: lighten(@color, 20%);
+
+      &:before {
+        border-bottom-color: lighten(@color, 20%);
+      }
+
+      &:after {
+        border-top-color: lighten(@color, 20%);
+      }
+    }
+
+    footer {
+      color: @color;
+    }
+
+    // todo
+    // styles for 'projects'
+    #counter {
+      .year {
+        span {
+          background: @color;
+        }
+      }
+    }
+  }
+}

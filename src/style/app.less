@@ -1,85 +1,9 @@
 @import (css) url('https://fonts.googleapis.com/css?family=Varela+Round');
-@import url('./utils.less');
-@import url('./projects.less');
+@import './utils';
+@import './theme';
+@import './constants';
 
-@cover-url: url('/cover.png');
-
-@green: #80BD01;
-@orange: #FFAC24;
-@purple: #7056B3;
-@red: #e7543d;
-@blue: #48AAC0;
-
-.theme(@name, @color) {
-  &[data-theme=@{name}] {
-    ::selection {
-      background: @color;
-      color: #fff;
-    }
-
-    ::-moz-selection {
-      background: @color;
-      color: #fff;
-    }
-
-    header {
-      border-bottom-color: @color;
-
-      .background {
-        background-color: @color;
-
-        .title, .tagline {
-            color: @color;
-        }
-
-        .menu-foreground li a {
-          color: darken(@color, 5%);
-        }
-
-        .menu-foreground li a[data-theme="@{name}"] {
-          color: inherit;
-        }
-      }
-    }
-
-    .content {
-      h2 {
-        &:before, &:after {
-          color: @color;
-        }
-      }
-
-      hr {
-        border-bottom-color: lighten(@color, 10%);
-      }
-    }
-
-    .hex {
-      background-color: lighten(@color, 20%);
-
-      &:before {
-        border-bottom-color: lighten(@color, 20%);
-      }
-
-      &:after {
-        border-top-color: lighten(@color, 20%);
-      }
-    }
-
-    footer {
-      color: @color;
-    }
-
-    // styles for 'projects'
-    #counter {
-      .year {
-        span {
-          background: @color;
-        }
-      }
-    }
-  }
-}
+@import './projects';
 
 body, div, span, h1, h2, h3, h4, h5, h6, p, em, a, img, strong, sub, b, u, i, ul, li, form, label {
   border: 0;
@@ -138,7 +62,6 @@ body, div, span, h1, h2, h3, h4, h5, h6, p, em, a, img, strong, sub, b, u, i, ul
       margin-left: -500px;
       width: 1000px;
       height: 420px;
-      background-color: @red;
 
       .transition(background-color .3s);
 
@@ -175,7 +98,6 @@ body, div, span, h1, h2, h3, h4, h5, h6, p, em, a, img, strong, sub, b, u, i, ul
           left: 50%;
           margin-left: -430px;
           top: 182px;
-          color: #e7543d;
           font-weight: bold;
           background: white;
       }
@@ -215,7 +137,6 @@ body, div, span, h1, h2, h3, h4, h5, h6, p, em, a, img, strong, sub, b, u, i, ul
 
           a {
             font-size: 20px;
-            color: darken(@red, 10%);
             background: white;
             text-decoration: none;
 
@@ -229,19 +150,13 @@ body, div, span, h1, h2, h3, h4, h5, h6, p, em, a, img, strong, sub, b, u, i, ul
       }
     }
 
-    border-bottom: 2px solid @red;
-
     .transition(border-bottom-color .3s)
   }
 
   .content {
     min-height: 100%;
 
-    box-sizing: border-box;
-    -o-box-sizing: border-box;
-    -ms-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
+    .vendor(box-sizing, border-box);
 
     margin: auto;
     width: 60%;
@@ -398,7 +313,6 @@ body, div, span, h1, h2, h3, h4, h5, h6, p, em, a, img, strong, sub, b, u, i, ul
     line-height: 70px;
     background: transparent;
     font-size: 14px;
-    color: @red;
 
     .transition(color .3s);
 
