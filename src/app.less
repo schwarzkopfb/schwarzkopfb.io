@@ -201,18 +201,17 @@ body, div, span, h1, h2, h3, h4, h5, h6, p, em, a, img, strong, sub, b, u, i, ul
         background-repeat: no-repeat;
       }
 
-      .foreground {
-        background-image: @cover-url;
-        pointer-events: none;
-      }
+      // .foreground {
+      //   background-image: @cover-url;
+      //   pointer-events: none;
+      // }
 
       .menu-foreground {
         z-index: 102;
 
         line-height: 395px;
 
-        opacity: 0;
-        background-image: @cover-url;
+        background: @cover-url;
 
         text-align: left;
 
@@ -224,12 +223,12 @@ body, div, span, h1, h2, h3, h4, h5, h6, p, em, a, img, strong, sub, b, u, i, ul
 
         li {
           display: inline-block;
+          position: relative;
           margin-right: 35px;
           font-weight: bold;
 
           &:first-child {
-            height: 100%;
-            width: 195px;
+            margin-left: 230px;
           }
 
           a {
@@ -251,14 +250,6 @@ body, div, span, h1, h2, h3, h4, h5, h6, p, em, a, img, strong, sub, b, u, i, ul
     border-bottom: 2px solid @red;
 
     .transition(border-bottom-color .3s)
-  }
-
-  .spacer {
-    content: ' ';
-    display: block;
-    height: 100%;
-    width: 1px;
-    background: transparent;
   }
 
   .content {

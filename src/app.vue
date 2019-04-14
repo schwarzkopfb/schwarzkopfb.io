@@ -1,5 +1,43 @@
 <style src="./app.less" lang="less"></style>
 
+<script>
+    const MENU_HEIGHT = 100
+
+    import skrollr from './skrollr'
+
+    export default {
+        data: () => ({
+            menu: {
+                about: '/about',
+                projects: '/projects',
+                'open source': '/open',
+                team: '/team',
+                contact: '/contact'
+            }
+        }),
+
+        methods: {
+            adjustContentTop() {
+                this.$refs.content.style.marginTop = `${window.innerHeight + MENU_HEIGHT}px`
+            },
+
+            getMenuItemDynamicSkrollrAttributes(i) {
+                return {
+                    [ `data-${i * 35}` ]: 'top: 20px; opacity: 0; transform: rotateX(-60deg);',
+                    [ `data-${i * 35 + 400}` ]: 'top: 0px; opacity: 1; transform: rotateX(0deg);'
+                }
+            }
+        },
+
+        mounted() {
+            const s = skrollr.init({ forceHeight: false })
+
+            this.adjustContentTop()
+            window.addEventListener('resize', () => this.adjustContentTop())
+        }
+    }
+</script>
+
 <template>
     <div id="main" data-content="about">
         <header data-0="bottom: 0%;" data-500="bottom: 100%;">
@@ -8,7 +46,10 @@
                     schwarzkopfb
                 </div>
 
-                <div class="tagline" data-0="display: !block; opacity: 1; top: 182px; transform: rotateX(0deg);" data-400="display: !none; opacity: 0; top: 165px; transform: rotateX(60deg);">
+                <div class="tagline"
+                     data-0="display: !block; opacity: 1; top: 182px; transform: rotateX(0deg) rotateZ(0deg);"
+                     data-400="display: !none; opacity: 0; top: 165px; transform: rotateX(60deg) rotateZ(1.5deg);"
+                >
                     the guy who solves problems from CSS to NoSQL Database Clusters
                 </div>
 
@@ -16,27 +57,13 @@
                     schwarzkopfb
                 </div>
 
-                <ul class="menu-foreground" data-0="top: 20px; opacity: 0; transform: rotateX(-60deg);" data-400="top: 0px; opacity: 1; transform: rotateX(0deg);">
-                    <li>
-                        <a href="/" class="index">&nbsp;</a>
-                    </li>
-                    <li>
-                        <a href="/about">about</a>
-                    </li>
-                    <li>
-                        <a href="/projects">projects</a>
-                    </li>
-                    <li>
-                        <a href="/open">open source</a>
-                    </li>
-                    <li>
-                        <a href="/team">team</a>
-                    </li>
-                    <li>
-                        <a href="/contact">contact</a>
+                <ul class="menu-foreground">
+                    <li v-for="(value, key, i) in menu" v-bind="getMenuItemDynamicSkrollrAttributes(i)">
+                        <a :href="value">{{ key }}</a>
                     </li>
                 </ul>
-                <div class="foreground"></div>
+
+                <!-- <div class="foreground"></div> -->
             </div>
         </header>
 
@@ -412,9 +439,7 @@
 
         </div>
 
-        <div ref="spacer" class="spacer"></div>
-
-        <div class="content" data-0="opacity: 0" data-400="opacity: 1">
+        <div ref="content" class="content" data-0="opacity: 0" data-400="opacity: 1">
 
             <h1>About</h1>
 

@@ -2,15 +2,10 @@
 
 import Vue from 'vue'
 import App from './app'
-import skrollr from './skrollr'
 
 new Vue({
     el: '#app',
-    render: h => h(App),
-
-    mounted() {
-        const s = skrollr.init({ forceHeight: false })
-    }
+    render: h => h(App)
 })
 
 console.log(`
