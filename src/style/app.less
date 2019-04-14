@@ -1,4 +1,5 @@
 @import (css) url('https://fonts.googleapis.com/css?family=Varela+Round');
+@import url('./utils.less');
 @import url('./projects.less');
 
 @cover-url: url('/cover.png');
@@ -9,21 +10,8 @@
 @red: #e7543d;
 @blue: #48AAC0;
 
-.vendor(@property, @value) {
-    -webkit-@{property}: @value;
-     -khtml-@{property}: @value;
-       -moz-@{property}: @value;
-        -ms-@{property}: @value;
-         -o-@{property}: @value;
-            @{property}: @value;
-}
-
-.transition(@value) {
-  .vendor(transition, @value);
-}
-
-.style(@content, @color) {
-  &[data-content=@{content}] {
+.theme(@name, @color) {
+  &[data-theme=@{name}] {
     ::selection {
       background: @color;
       color: #fff;
@@ -48,7 +36,7 @@
           color: darken(@color, 5%);
         }
 
-        .menu-foreground li a[href="/@{content}"] {
+        .menu-foreground li a[data-theme="@{name}"] {
           color: inherit;
         }
       }
@@ -61,7 +49,7 @@
         }
       }
 
-      hr, h1:after {
+      hr {
         border-bottom-color: lighten(@color, 10%);
       }
     }
@@ -119,11 +107,11 @@ body, div, span, h1, h2, h3, h4, h5, h6, p, em, a, img, strong, sub, b, u, i, ul
   height: 0;
   overflow-y: visible;
 
-  .style('contact', @orange);
-  .style('projects', @purple);
-  .style('open', @green);
-  .style('team', @blue);
-  .style('about', @red);
+  .theme('orange', @orange);
+  .theme('purple', @purple);
+  .theme('green', @green);
+  .theme('blue', @blue);
+  .theme('red', @red);
 
   header {
     z-index: 100;

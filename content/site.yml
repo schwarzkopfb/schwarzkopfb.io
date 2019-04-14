@@ -1,3 +1,4 @@
+theme: red
 title: schwarzkopfb
 tagline: the guy who solves problems from CSS to NoSQL Database Clusters
 content: fetching page content...
@@ -5,15 +6,20 @@ content: fetching page content...
 pages:
   about: /about
   projects:
+    theme: purple
     link: /projects
     title: my expertise
   open source:
+    theme: green
     content: open
     link: /open
   team:
+    theme: blue
     label: tim
     link: /team
     tagline: hellooo&nbsp;<strong>world</strong>
-  contact: contact
+  contact:
+    theme: orange
+    link: /contact
 
 footer: Found a typo? <a href="https://github.com/schwarzkopfb/schwarzkopfb.io">Please, let me know!</a>

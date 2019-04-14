@@ -3,7 +3,7 @@
 <style src="./style/app.less" lang="less"></style>
 
 <template>
-    <div id="main" data-content="about">
+    <div id="main" :data-theme="theme">
         <header data-0="bottom: 0%;" data-500="bottom: 100%;">
             <div class="background">
                 <div v-html="title"
@@ -25,8 +25,14 @@
                 ></div>
 
                 <ul class="menu-foreground">
-                    <li v-for="(item, i) in menu" v-bind="getMenuItemDynamicSkrollrAttributes(i)">
-                        <a v-html="item.label" :href="item.link" @click.prevent="currentMenuItem = item"></a>
+                    <li v-for="(item, i) in menu"
+                        v-bind="getMenuItemDynamicSkrollrAttributes(i)"
+                    >
+                        <a v-html="item.label"
+                           :href="item.link"
+                           :data-theme="item.theme"
+                           @click.prevent="currentMenuItem = item"
+                        ></a>
                     </li>
                 </ul>
             </div>
