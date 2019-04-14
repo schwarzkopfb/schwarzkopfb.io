@@ -16,7 +16,6 @@
     Typewriter aesthetic chia Truffaut Intelligentsia. Organic single-origin coffee fixie, bitters church-key mixtape banjo PBR&B craft beer fanny pack lo-fi Echo Park. Occupy Banksy Etsy cred. 8-bit Tumblr occupy +1. Chia pork belly paleo chambray authentic. Helvetica 8-bit Thundercats, Williamsburg Blue Bottle slow-carb you probably haven't heard of them tofu blog. XOXO sriracha iPhone, chambray heirloom selvage wolf direct trade butcher street art hoodie.
 </p>
 
-<style>@import url(/assets/css/projects.css);</style>
 <div id="counter">
     <div class="year" data--50-center-center="top: -1px" data-50-center-center="top: 100px" data-anchor-target=".year-2015"><span>15</span></div>
     <div class="year" data--150-center-center="top: -1px" data--50-center-center="top: 100px" data-anchor-target=".year-2014"><span>14</span></div>

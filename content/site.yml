@@ -1,0 +1,19 @@
+title: schwarzkopfb
+tagline: the guy who solves problems from CSS to NoSQL Database Clusters
+content: fetching page content...
+
+pages:
+  about: /about
+  projects:
+    link: /projects
+    title: my expertise
+  open source:
+    content: open
+    link: /open
+  team:
+    label: tim
+    link: /team
+    tagline: hellooo&nbsp;<strong>world</strong>
+  contact: contact
+
+footer: Found a typo? <a href="https://github.com/schwarzkopfb/schwarzkopfb.io">Please, let me know!</a>

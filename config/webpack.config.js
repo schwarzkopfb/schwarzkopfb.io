@@ -12,7 +12,7 @@ function resolve(relativePath) {
 module.exports = {
     mode: 'production',
     entry: {
-        app: resolve('src/app.js')
+        app: resolve('src/index.js')
     },
     output: {
         filename: '[name].js',
@@ -35,7 +35,21 @@ module.exports = {
             },
             {
                 test: /\.js$/,
-                loader: 'babel-loader'
+                loader: 'babel-loader',
+                options: {
+                    plugins: [ '@babel/plugin-syntax-dynamic-import' ]
+                }
+            },
+            {
+                test: /\.md$/,
+                use: [
+                    'html-loader',
+                    'markdown-loader'
+                ]
+            },
+            {
+                test: /\.ya?ml$/,
+                loader: 'yaml-import-loader'
             }
         ]
     },
@@ -51,6 +65,6 @@ module.exports = {
         alias: {
             'vue$': 'vue/dist/vue.esm.js',
         },
-        extensions: [ '.vue', '.js', '.json' ]
+        extensions: [ '.vue', '.js', '.json', '.md', '.yml', '.yaml' ]
     }
 }

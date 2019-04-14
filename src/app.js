@@ -1,18 +1,105 @@
-'use strict'
+const MENU_HEIGHT = 100
 
-import Vue from 'vue'
-import App from './app'
+import skrollr from './skrollr'
+import labels from '../content/site'
 
-new Vue({
-    el: '#app',
-    render: h => h(App)
-})
+function getLabels() {
+    const result = { menu: [] },
+          { menu } = result,
+          { title, tagline, content, pages, footer } = labels
 
-console.log(`
+    // extract default title, tagline & content
+    result.title = title
+    result.tagline = tagline
+    result.content = content
 
-Welcome here!
-I'm honored that you're curious about the source code. 🙃
-Did you know that this whole site is open source?
-https://github.com/schwarzkopfb/schwarzkopfb.io
+    // parse menu items & fetch related content
+    for (let [ key, value ] of Object.entries(pages)) {
+        const item = { title, tagline, content }
 
-`)
+        if (typeof value === 'object') {
+            var label = value.label || key,
+                { link } = value
+
+            item.title = value.title || title
+            item.tagline = value.tagline || tagline
+
+            import(`../content/pages/${value.content || key}`)
+                .then(res => item.content = res.default) // todo: handle error
+        }
+        else {
+            label = key
+            link = value
+
+            import(`../content/pages/${key}`)
+                .then(res => item.content = res.default) // todo: handle error
+        }
+
+        item.label = label
+        item.link = link
+
+        menu.push(item)
+    }
+
+    // extract footer
+    result.footer = footer
+
+    return result
+}
+
+export default {
+    data: () => ({
+        currentMenuItem: null,
+        skrollr: null,
+        ...getLabels()
+    }),
+
+    methods: {
+        adjustContentTop() {
+            this.$refs.content.style.marginTop = `${window.innerHeight + MENU_HEIGHT}px`
+        },
+
+        getMenuItemDynamicSkrollrAttributes(i) {
+            // this is the soul of that 3d twist effect of the menu bar
+            return {
+                [ `data-${i * 35}` ]: 'top: 20px; opacity: 0; transform: rotateX(-60deg);',
+                [ `data-${i * 35 + 400}` ]: 'top: 0px; opacity: 1; transform: rotateX(0deg);'
+            }
+        }
+    },
+
+    watch: {
+        currentMenuItem: {
+            deep: true,
+
+            handler(item) {
+                // update title, tagline & content by the current menu item
+                this.title = item.title
+                this.tagline = item.tagline
+                this.content = item.content
+
+                // tell Skrollr about content (and page size) change
+                this.$nextTick(() => 
+                    this.skrollr.refresh()
+                )
+            }
+        }
+    },
+
+    created() {
+        // select first menu item by default
+        this.currentMenuItem = this.menu[ 0 ]
+    },
+
+    mounted() {
+        // initialize Skrollr and store instance
+        this.skrollr = skrollr.init({ forceHeight: false })
+
+        // adjust content layer position to window size
+        this.adjustContentTop()
+
+        // maybe we have to reload the whole page here (?) :(
+        // because of dynamically generated skrollr attributes
+        window.addEventListener('resize', () => this.adjustContentTop())
+    }
+}

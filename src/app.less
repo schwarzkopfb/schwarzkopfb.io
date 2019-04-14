@@ -1,4 +1,5 @@
 @import (css) url('https://fonts.googleapis.com/css?family=Varela+Round');
+@import url('./projects.less');
 
 @cover-url: url('/cover.png');
 
@@ -60,8 +61,8 @@
         }
       }
 
-      hr {
-        border-top-color: lighten(@color, 10%);
+      hr, h1:after {
+        border-bottom-color: lighten(@color, 10%);
       }
     }
 
@@ -298,12 +299,14 @@ body, div, span, h1, h2, h3, h4, h5, h6, p, em, a, img, strong, sub, b, u, i, ul
     hr {
       max-width: 800px;
       width: 100%;
-      margin: 0 auto 60px auto;
       border: none;
-      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
       overflow: hidden;
     }
 
+    hr {
+        margin: 0 auto 60px auto;
+    }
   }
 
   .layer {
@@ -406,6 +409,7 @@ body, div, span, h1, h2, h3, h4, h5, h6, p, em, a, img, strong, sub, b, u, i, ul
     height: 70px;
     line-height: 70px;
     background: transparent;
+    font-size: 14px;
     color: @red;
 
     .transition(color .3s);
