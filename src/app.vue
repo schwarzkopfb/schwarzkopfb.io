@@ -1,4 +1,4 @@
-<script src="./app.js"></script>
+<script src="./script/app.js"></script>
 
 <style src="./style/app.less" lang="less"></style>
 

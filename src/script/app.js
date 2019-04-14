@@ -2,7 +2,7 @@ const DEFAULT_THEME = 'red'
 const MENU_HEIGHT = 100
 
 import skrollr from './skrollr'
-import labels from '../content/site'
+import labels from '../../content/site'
 
 function getLabels() {
     const result = { menu: [] },
@@ -39,7 +39,7 @@ function getLabels() {
 
             // fetch page content
             // fallback to item key if not specified
-            import(`../content/pages/${value.content || key}`)
+            import(`../../content/pages/${value.content || key}`)
                 .then(res => item.content = res.default) // todo: handle error
         }
         else {
@@ -49,7 +49,7 @@ function getLabels() {
             link = value
 
             // fetch page content
-            import(`../content/pages/${key}`)
+            import(`../../content/pages/${key}`)
                 .then(res => item.content = res.default) // todo: handle error
         }
 
