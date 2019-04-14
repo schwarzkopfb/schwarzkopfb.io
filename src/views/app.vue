@@ -1,6 +1,6 @@
-<script src="./script/app.js"></script>
+<script src="../script/app.js"></script>
 
-<style src="./style/app.less" lang="less"></style>
+<style src="../style/app.less" lang="less"></style>
 
 <template>
     <div id="main" :data-theme="theme">

@@ -1,7 +1,7 @@
 'use strict'
 
 import Vue from 'vue'
-import App from './app'
+import App from './views/app'
 
 new Vue({
     el: '#app',
