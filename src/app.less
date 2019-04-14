@@ -191,33 +191,26 @@ body, div, span, h1, h2, h3, h4, h5, h6, p, em, a, img, strong, sub, b, u, i, ul
           background: white;
       }
 
-      .foreground, .menu-foreground {
+      .menu-foreground {
+        z-index: 102;
+        margin: 0;
+        padding: 0;
+
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
+
         background-position: center center;
         background-repeat: no-repeat;
-      }
-
-      // .foreground {
-      //   background-image: @cover-url;
-      //   pointer-events: none;
-      // }
-
-      .menu-foreground {
-        z-index: 102;
+        background-image: @cover-url;
 
         line-height: 395px;
-
-        background: @cover-url;
 
         text-align: left;
 
         list-style-type: none;
-        margin: 0;
-        padding: 0;
 
         transform-origin: center;
 

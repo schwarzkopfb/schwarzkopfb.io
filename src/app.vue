@@ -7,6 +7,9 @@
 
     export default {
         data: () => ({
+            title: 'schwarzkopfb',
+            tagline: 'the guy who solves problems from CSS to NoSQL Database Clusters',
+
             menu: {
                 about: '/about',
                 projects: '/projects',
@@ -33,6 +36,9 @@
             const s = skrollr.init({ forceHeight: false })
 
             this.adjustContentTop()
+
+            // maybe we have to reload the whole page here (?) :(
+            // because of dynamically generated skrollr attributes
             window.addEventListener('resize', () => this.adjustContentTop())
         }
     }
@@ -42,19 +48,25 @@
     <div id="main" data-content="about">
         <header data-0="bottom: 0%;" data-500="bottom: 100%;">
             <div class="background">
-                <div class="title title-top" data-0="margin-left: -450px" data-500="margin-left: -400px">
-                    schwarzkopfb
+                <div class="title title-top"
+                     data-0="margin-left: -450px"
+                     data-500="margin-left: -400px"
+                >
+                    {{ title }}
                 </div>
 
                 <div class="tagline"
                      data-0="display: !block; opacity: 1; top: 182px; transform: rotateX(0deg) rotateZ(0deg);"
                      data-400="display: !none; opacity: 0; top: 165px; transform: rotateX(60deg) rotateZ(1.5deg);"
                 >
-                    the guy who solves problems from CSS to NoSQL Database Clusters
+                    {{ tagline }}
                 </div>
 
-                <div class="title title-bottom" data-0="margin-left: -400px;" data-500="margin-left: -450px;">
-                    schwarzkopfb
+                <div class="title title-bottom"
+                     data-0="margin-left: -400px;"
+                     data-500="margin-left: -450px;"
+                >
+                    {{ title }}
                 </div>
 
                 <ul class="menu-foreground">
@@ -62,8 +74,6 @@
                         <a :href="value">{{ key }}</a>
                     </li>
                 </ul>
-
-                <!-- <div class="foreground"></div> -->
             </div>
         </header>
 
