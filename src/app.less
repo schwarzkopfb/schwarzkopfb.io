@@ -111,6 +111,13 @@ body, div, span, h1, h2, h3, h4, h5, h6, p, em, a, img, strong, sub, b, u, i, ul
   font-family: 'Varela Round', sans-serif;
   color: #7c7c7c;
 
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 0;
+  overflow-y: visible;
+
   .style('contact', @orange);
   .style('projects', @purple);
   .style('open', @green);
@@ -154,6 +161,7 @@ body, div, span, h1, h2, h3, h4, h5, h6, p, em, a, img, strong, sub, b, u, i, ul
           text-align: center;
           left: 50%;
           font-size: 90px;
+          transform-origin: center;
       }
 
       .title-top {
@@ -211,6 +219,8 @@ body, div, span, h1, h2, h3, h4, h5, h6, p, em, a, img, strong, sub, b, u, i, ul
         list-style-type: none;
         margin: 0;
         padding: 0;
+
+        transform-origin: center;
 
         li {
           display: inline-block;
