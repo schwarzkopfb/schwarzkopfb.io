@@ -4,6 +4,8 @@ const MENU_HEIGHT = 100
 import skrollr from './skrollr'
 import labels from '../../content/site'
 
+import layer from '../views/layer'
+
 function getLabels() {
     const result = { menu: [] },
           { menu } = result,
@@ -67,6 +69,8 @@ function getLabels() {
 }
 
 export default {
+    components: { layer },
+
     data: () => ({
         currentMenuItem: null,
         skrollr: null,
