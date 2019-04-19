@@ -39,375 +39,102 @@
         </header>
 
         <div class="layer" data-100="top[sqrt]: 100px" data-end="top[sqrt]: -150px">
-
-
                 <div class="hex"></div>
-
-
-
                 <div class="hex"></div>
-
-
-
                 <div class="hex"></div>
-
-
-
                 <div class="hex"></div>
-
-
-
                 <div class="hex"></div>
-
-
-
                 <div class="hex"></div>
-
-
-
                 <div class="hex"></div>
-
-
-
                 <div class="hex"></div>
-
-
-
                 <div class="hex"></div>
-
-
-
                 <div class="hex"></div>
-
-
-
                 <div class="hex"></div>
-
-
-
                 <div class="hex"></div>
-
-
-
                 <div class="break"></div>
-
-
-
                 <div class="hex"></div>
-
-
-
                 <div class="hex"></div>
-
-
-
                 <div class="hex"></div>
-
-
-
                 <div class="hex"></div>
-
-
-
                 <div class="hex"></div>
-
-
-
                 <div class="hex"></div>
-
-
-
                 <div class="hex"></div>
-
-
-
                 <div class="break"></div>
-
-
-
                 <div class="hex"></div>
-
-
-
                 <div class="hex"></div>
-
-
-
                 <div class="hex"></div>
-
-
-
                 <div class="hex"></div>
-
-
-
                 <div class="hex"></div>
-
-
-
                 <div class="hex"></div>
-
-
-
                 <div class="hex"></div>
-
-
-
                 <div class="hex"></div>
-
-
-
                 <div class="hex"></div>
-
-
         </div>
 
         <div class="layer" data-100="top[sqrt]: 100px" data-end="top[sqrt]: -100px">
-
-
                 <div class="hex"></div>
-
-
-
                 <div class="hex"></div>
-
-
-
                 <div class="hex"></div>
-
-
-
                 <div class="hex"></div>
-
-
-
                 <div class="hex"></div>
-
-
-
                 <div class="hex"></div>
-
-
-
                 <div class="hex"></div>
-
-
-
                 <div class="hex"></div>
-
-
-
                 <div class="hex"></div>
-
-
-
                 <div class="hex"></div>
-
-
-
                 <div class="hex"></div>
-
-
-
                 <div class="hex"></div>
-
-
-
                 <div class="hex"></div>
-
-
-
                 <div class="hex"></div>
-
-
-
                 <div class="hex"></div>
-
-
-
                 <div class="hex"></div>
-
-
-
                 <div class="hex"></div>
-
-
-
                 <div class="hex"></div>
-
-
-
                 <div class="hex"></div>
-
-
-
                 <div class="hex"></div>
-
-
-
                 <div class="break"></div>
-
-
-
                 <div class="hex"></div>
-
-
-
                 <div class="hex"></div>
-
-
-
                 <div class="hex"></div>
-
-
-
                 <div class="hex"></div>
-
-
-
                 <div class="break"></div>
-
-
-
                 <div class="hex"></div>
-
-
-
                 <div class="hex"></div>
-
-
-
                 <div class="hex"></div>
-
-
-
                 <div class="hex"></div>
-
-
         </div>
 
         <div class="layer" data-100="top: 100px" data-end="top: -250px">
-
-
             <div class="break"></div>
-
-
-
             <div class="hex"></div>
-
-
-
             <div class="hex"></div>
-
-
-
             <div class="hex"></div>
-
-
-
             <div class="hex"></div>
-
-
-
             <div class="hex"></div>
-
-
-
             <div class="hex"></div>
-
-
-
             <div class="hex"></div>
-
-
-
             <div class="hex"></div>
-
-
-
             <div class="hex"></div>
-
-
-
             <div class="hex"></div>
-
-
-
             <div class="hex"></div>
-
-
-
             <div class="hex"></div>
-
-
-
             <div class="hex"></div>
-
-
-
             <div class="hex"></div>
-
-
-
             <div class="break"></div>
-
-
-
             <div class="break"></div>
-
-
-
             <div class="hex"></div>
-
-
-
             <div class="break"></div>
-
-
-
             <div class="hex"></div>
-
-
-
             <div class="hex"></div>
-
-
-
             <div class="hex"></div>
-
-
-
             <div class="hex"></div>
-
-
-
             <div class="hex"></div>
-
-
-
             <div class="break"></div>
-
-
-
             <div class="hex"></div>
-
-
-
             <div class="hex"></div>
-
-
-
             <div class="hex"></div>
-
-
-
             <div class="break"></div>
-
-
-
             <div class="hex"></div>
-
-
         </div>
 
         <div v-html="content"
