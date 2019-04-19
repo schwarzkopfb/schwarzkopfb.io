@@ -74,19 +74,21 @@ body, div, span, h1, h2, h3, h4, h5, h6, p, em, a, img, strong, sub, b, u, i, ul
           left: 50%;
           font-size: 90px;
           transform-origin: center;
-      }
 
-      .title-top {
-          top: 70px;
-          height: 72px;
-          margin-left: -450px;
-      }
+          .transition(color .3s);
 
-      .title-bottom {
-          top: 250px;
-          line-height: 0px;
-          height: 55px;
-          margin-left: -400px;
+          &.title-top {
+              top: 70px;
+              height: 72px;
+              margin-left: -450px;
+          }
+
+          &.title-bottom {
+              top: 250px;
+              line-height: 0px;
+              height: 55px;
+              margin-left: -400px;
+          }
       }
 
       .tagline {
@@ -100,6 +102,8 @@ body, div, span, h1, h2, h3, h4, h5, h6, p, em, a, img, strong, sub, b, u, i, ul
           top: 182px;
           font-weight: bold;
           background: white;
+
+          .transition(color .3s);
       }
 
       .menu-foreground {
