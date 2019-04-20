@@ -4,7 +4,8 @@ const MENU_HEIGHT = 100
 import skrollr from './skrollr'
 import labels from '../../content/site'
 
-import layer from '../views/layer'
+import bgLayer from '../views/bg-layer'
+import navLink from '../views/nav-link'
 
 function getLabels() {
     const result = { menu: [] },
@@ -69,7 +70,7 @@ function getLabels() {
 }
 
 export default {
-    components: { layer },
+    components: { bgLayer, navLink },
 
     data: () => ({
         currentMenuItem: null,
@@ -78,6 +79,34 @@ export default {
     }),
 
     methods: {
+        onLinkClick(item) {
+            // update UI according to the selected menu item
+            // note: `item` should be a string and `goToPage()`
+            // returns the related menu item object
+            item = this.goToPage(item)
+
+            // update url as well
+            history.pushState(item, '', item.link)
+        },
+
+        goToPage(menuItem) {
+            if (!menuItem)
+                menuItem = this.getMenuItemByUrl()
+            else if (typeof menuItem === 'string')
+                menuItem = this.getMenuItemByLink(menuItem)
+
+            return this.currentMenuItem = menuItem
+        },
+
+        getMenuItemByLink(link) {
+            return this.menu.find(item => item.link === link)
+        },
+
+        getMenuItemByUrl() {
+            // pass back the first menu item by default
+            return this.getMenuItemByLink(location.pathname) || this.menu[ 0 ]
+        },
+
         adjustContentTop() {
             this.$refs.content.style.marginTop = `${window.innerHeight + MENU_HEIGHT}px`
         },
@@ -114,14 +143,17 @@ export default {
         // initialize Skrollr and store instance
         this.skrollr = skrollr.init({ forceHeight: false })
 
-        // select first menu item by default
-        this.currentMenuItem = this.menu[ 0 ]
-
         // adjust content layer position to window size
         this.adjustContentTop()
+
+        // initial navigation: open the page (if) specified by the url
+        this.goToPage()
 
         // maybe we have to reload the whole page here (?) :(
         // because of dynamically generated skrollr attributes
         window.addEventListener('resize', () => this.adjustContentTop())
+
+        // enable push-state-navigation
+        window.addEventListener('popstate', e => this.goToPage(e.state))
     }
 }

@@ -9,38 +9,36 @@
                 <div v-html="title"
                      class="title title-top"
                      data-0="margin-left: -450px"
-                     data-500="margin-left: -400px"
-                ></div>
+                     data-500="margin-left: -400px">
+                 </div>
 
                 <div v-html="tagline"
                      class="tagline"
                      data-0="display: !block; opacity: 1; top: 182px; transform: rotateX(0deg) rotateZ(0deg);"
-                     data-400="display: !none; opacity: 0; top: 165px; transform: rotateX(60deg) rotateZ(1.5deg);"
-                ></div>
+                     data-400="display: !none; opacity: 0; top: 165px; transform: rotateX(60deg) rotateZ(1.5deg);">
+                 </div>
 
                 <div v-html="title"
                      class="title title-bottom"
                      data-0="margin-left: -400px;"
-                     data-500="margin-left: -450px;"
-                ></div>
+                     data-500="margin-left: -450px;">
+                 </div>
 
                 <ul class="menu-foreground">
                     <li v-for="(item, i) in menu"
                         v-bind="getMenuItemDynamicSkrollrAttributes(i)"
                     >
-                        <a v-html="item.label"
-                           :href="item.link"
-                           :data-theme="item.theme"
-                           @click.prevent="currentMenuItem = item"
-                        ></a>
+                        <nav-link :to="item.link"
+                                  v-html="item.label"
+                                  :data-theme="item.theme" />
                     </li>
                 </ul>
             </div>
         </header>
 
-        <layer />
-        <layer end="top[sqrt]: -100px" />
-        <layer end="top[sqrt]: -250px" />
+        <bg-layer />
+        <bg-layer end="top[sqrt]: -100px" />
+        <bg-layer end="top[sqrt]: -250px" />
 
         <div v-html="content"
              ref="content"
