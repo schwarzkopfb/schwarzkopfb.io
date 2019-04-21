@@ -45,7 +45,9 @@
              data-0="opacity: 0"
              data-400="opacity: 1"
         >
-            <component :is="$router.page.component"></component>
+            <transition name="component-fade" mode="out-in">
+                <component :is="$router.page.component" />
+            </transition>
         </div>
 
         <footer v-html="content.footer"></footer>

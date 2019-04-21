@@ -28,7 +28,8 @@ export default {
     },
 
     created() {
-        this.$router.pages(content.pages)
+        this.$router.init(content.pages)
+        this.$router.$on('page:mounted', () => this.skrollr.refresh())
     },
 
     mounted() {
