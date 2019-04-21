@@ -22,4 +22,4 @@ pages:
     theme: orange
     link: /contact
 
-footer: Found a typo? <a href="https://github.com/schwarzkopfb/schwarzkopfb.io">Please, let me know!</a>
+footer: Found a typo? <a href="https://github.com/schwarzkopfb/schwarzkopfb.io" target="_blank">Please, let me know!</a>
