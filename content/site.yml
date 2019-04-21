@@ -21,5 +21,8 @@ pages:
   contact:
     theme: orange
     link: /contact
+  404:
+    theme: red
+    link: /404
 
 footer: Found a typo? <a href="https://github.com/schwarzkopfb/schwarzkopfb.io" target="_blank">Please, let me know!</a>

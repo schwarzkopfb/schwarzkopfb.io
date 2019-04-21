@@ -4,7 +4,8 @@
   "description": "Personal Home Page",
   "main": "server.js",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "yaml": "^1.5.0"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",
