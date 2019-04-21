@@ -1,10 +1,10 @@
-theme: red
 title: schwarzkopfb
 tagline: the guy who solves problems from CSS to NoSQL Database Clusters
-content: fetching page content...
 
 pages:
-  about: /about
+  about:
+    theme: red
+    link: /about
   projects:
     theme: purple
     link: /projects

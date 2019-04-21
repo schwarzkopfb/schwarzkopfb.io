@@ -27,3 +27,5 @@ Ennél kevésbé felsorolásosan. (Insert some töltelék...) + kellenek még me
 * Phonegap, <strike>NativeScript</strike><strong>(te egyáltalán kipróbáltad már?)</strong> and native mobile development
 * HTML5, CSS3, JavaScript
 * Windows Azure, cloud infrastructures and scalable applications
+
+<nav-link to="/projects">Check out my latest projects!</nav-link>

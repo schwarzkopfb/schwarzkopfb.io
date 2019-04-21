@@ -1,25 +1,18 @@
-const DEFAULT_THEME = 'red'
-
 import labels from '../../content/site'
 
-const result = { menu: [] },
-      { menu } = result,
+const result = { pages: [] },
       { title, tagline, content, pages, footer } = labels
 
 let { theme } = labels
 
-// fallback to default if not specified
-theme = theme || DEFAULT_THEME
-
-// extract default theme, title, tagline & content
-result.theme = theme
+// extract default title, tagline
 result.title = title
 result.tagline = tagline
-result.content = content
 
-// parse menu items & fetch related content
+// parse pages
 for (let [ key, value ] of Object.entries(pages)) {
-    const item = { title, tagline, content }
+    const item = { title, tagline }
+    let content = key
 
     if (typeof value === 'object') {
         // fallback to item key if not specified
@@ -34,27 +27,23 @@ for (let [ key, value ] of Object.entries(pages)) {
         // fallback to main tagline if not specified
         item.tagline = value.tagline || tagline
 
-        // fetch page content
-        // fallback to item key if not specified
-        import(`../../content/pages/${value.content || key}`)
-            .then(res => item.content = res.default) // todo: handle error
+        // use content key from config if explicitly specified
+        if (value.content)
+            content = value.content
     }
     else {
         // not specified, so fallback to main theme
         itemTheme = theme
         label = key
         link = value
-
-        // fetch page content
-        import(`../../content/pages/${key}`)
-            .then(res => item.content = res.default) // todo: handle error
     }
 
+    item.component = () => import(`../../content/pages/${content}`)
     item.theme = itemTheme
     item.label = label
     item.link = link
 
-    menu.push(item)
+    result.pages.push(item)
 }
 
 // extract footer
