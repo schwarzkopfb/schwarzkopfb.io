@@ -26,6 +26,7 @@
 
                 <ul class="menu-foreground">
                     <li v-for="(item, i) in content.pages"
+                        v-if="!item.hidden"
                         v-bind="getMenuItemDynamicSkrollrAttributes(i)"
                     >
                         <nav-link :to="item.link"

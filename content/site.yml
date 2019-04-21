@@ -22,6 +22,7 @@ pages:
     theme: orange
     link: /contact
   404:
+    hidden: true
     theme: red
     link: /404
 

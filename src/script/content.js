@@ -39,6 +39,7 @@ for (let [ key, value ] of Object.entries(pages)) {
     }
 
     item.component = () => import(`../../content/pages/${content}`)
+    item.hidden = value.hidden
     item.theme = itemTheme
     item.label = label
     item.link = link
