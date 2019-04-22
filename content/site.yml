@@ -21,7 +21,6 @@ pages:
     link: /open
   team:
     theme: red
-    label: tim
     link: /team
     tagline: hellooo&nbsp;<strong>world</strong>
   contact:

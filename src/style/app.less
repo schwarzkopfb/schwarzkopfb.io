@@ -242,34 +242,27 @@ body, div, span, h1, h2, h3, h4, h5, h6, p, em, a, img, strong, sub, b, u, i, ul
         height: 60px;
         display: inline-block;
         outline: 1px solid transparent;
+        border-radius: 5px;
+        top: 30px;
 
         .transition(background-color .3s);
 
         &:before, &:after {
             position: absolute;
-            left: -1px;
-            width: 0;
-            height: 0;
-            border-left: 53px solid transparent;
-            border-right: 53px solid transparent;
-            content: " ";
+            width: 104px;
+            height: 60px;
+            left: 0;
+            border-radius: 5px;
+            content: ' ';
         }
 
-      &:before {
-        top: -29px;
-        border-bottom-width: 30px;
-        border-bottom-style: solid;
+        &:before {
+            .transform(rotate(60deg));
+        }
 
-        .transition(border-bottom-color .3s);
-      }
-
-      &:after {
-        bottom: -29px;
-        border-top-width: 30px;
-        border-top-style: solid;
-
-        .transition(border-top-color .3s);
-      }
+        &:after {
+            .transform(rotate(-60deg));
+        }
 
       & {
         transform: rotate(2.75deg);

@@ -45,14 +45,8 @@
     }
 
     .hex {
-      background-color: lighten(@color, 20%);
-
-      &:before {
-        border-bottom-color: lighten(@color, 20%);
-      }
-
-      &:after {
-        border-top-color: lighten(@color, 20%);
+      &, &:before, &:after {
+          background-color: lighten(@color, 20%);
       }
     }
 
