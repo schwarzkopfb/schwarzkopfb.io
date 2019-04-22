@@ -1,13 +1,11 @@
 @import './constants';
+@import './hexagon';
 @import './utils';
 
-@base-value: 30px;
+@size: 30px;
 
-@width: @base-value * 2 * 1.732;
-@height: @base-value * 2;
-
-@hexagon-width: @width;
-@hexagon-height: @height * 2;
+@width: @size * 2 * 1.732;
+@height: @size * 2;
 
 #spinner {
     position: fixed;
@@ -25,43 +23,22 @@
         opacity: 0;
     }
 
-    .doubleBounce {
+    .bounce {
         position: absolute;
         top: 50%;
         left: 50%;
-        margin-top: -@hexagon-height / 2;
-        margin-left: -@hexagon-width / 2;
+        margin-top: -@height / 2;
+        margin-left: -@width / 2;
 
-        width: @hexagon-width;
-        height: @hexagon-height;
+        width: @width;
+        height: @height;
 
         .hexagon {
             position: absolute;
-            width: @width;
-            height: @height;
-            border-radius: 5px;
             opacity: .2;
+            .hexagon(@size);
 
-            top: @base-value;
-
-            animation: doubleBounce 2s infinite ease-in-out, colors 4s infinite ease-in-out;
-
-            &:before, &:after {
-                position: absolute;
-                width: inherit;
-                height: inherit;
-                border-radius: inherit;
-                background: inherit;
-                content: ' ';
-            }
-
-            &:before {
-                .transform(rotate(60deg));
-            }
-
-            &:after {
-                .transform(rotate(-60deg));
-            }
+            animation: bounce 2s infinite ease-in-out, colors 4s infinite ease-in-out;
 
             &:nth-child(2) {
                 animation-delay: -1s;
@@ -70,7 +47,7 @@
     }
 }
 
-@keyframes doubleBounce {
+@keyframes bounce {
     0% {
         .transform(scale(0.2));
     }

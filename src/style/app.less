@@ -1,6 +1,7 @@
 @import (css) url('https://fonts.googleapis.com/css?family=Varela+Round');
 @import './utils';
 @import './theme';
+@import './hexagon';
 @import './constants';
 @import './component-fade';
 
@@ -238,31 +239,11 @@ body, div, span, h1, h2, h3, h4, h5, h6, p, em, a, img, strong, sub, b, u, i, ul
     .hex {
         position: relative;
         margin-top: 30px;
-        width: 104px;
-        height: 60px;
         display: inline-block;
         outline: 1px solid transparent;
-        border-radius: 5px;
-        top: 30px;
+        .hexagon();
 
         .transition(background-color .3s);
-
-        &:before, &:after {
-            position: absolute;
-            width: 104px;
-            height: 60px;
-            left: 0;
-            border-radius: 5px;
-            content: ' ';
-        }
-
-        &:before {
-            .transform(rotate(60deg));
-        }
-
-        &:after {
-            .transform(rotate(-60deg));
-        }
 
       & {
         transform: rotate(2.75deg);
