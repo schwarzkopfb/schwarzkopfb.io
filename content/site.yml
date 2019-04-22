@@ -3,12 +3,12 @@ tagline: the guy who solves problems from CSS to NoSQL Database Clusters
 
 pages:
   home:
-    theme: red
+    theme: blue
     content: about
     link: /
     hidden: true
   about:
-    theme: red
+    theme: blue
     link: /about
   projects:
     theme: purple
@@ -19,7 +19,7 @@ pages:
     content: open
     link: /open
   team:
-    theme: blue
+    theme: red
     label: tim
     link: /team
     tagline: hellooo&nbsp;<strong>world</strong>

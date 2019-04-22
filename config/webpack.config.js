@@ -5,14 +5,14 @@ const path = require('path'),
       HtmlWebpackPlugin = require('html-webpack-plugin')
 
 // this file is under 'config' folder
-function resolve(relativePath) {
-    return path.resolve(__dirname, '..', relativePath)
+function resolve(...relativePaths) {
+    return path.resolve(__dirname, '..', ...relativePaths)
 }
 
 module.exports = {
     mode: 'production',
     entry: {
-        app: resolve('src/index.js')
+        app: resolve('src', 'index.js')
     },
     output: {
         filename: '[name].js',
@@ -56,8 +56,8 @@ module.exports = {
     plugins: [
         new VueLoaderPlugin,
         new HtmlWebpackPlugin({
-            filename: resolve('dist/index.html'),
-            template: resolve('src/template/app.html'),
+            filename: resolve('dist', 'index.html'),
+            template: resolve('src', 'template', 'app.html'),
             hash: true
         })
     ],
