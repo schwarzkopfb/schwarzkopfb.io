@@ -46,6 +46,6 @@
   },
   "homepage": "https://github.com/schwarzkopfb/schwarzkopfb.io#readme",
   "engines": {
-    "node": "8.11.1"
+    "node": "10.15.3"
   }
 }
