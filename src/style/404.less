@@ -1,0 +1,82 @@
+@import './constants';
+@import './utils';
+
+@circle-size: 280px;
+
+#main .content {
+    h1 {
+        font-size: 60px;
+    }
+
+    p {
+        text-align: center;
+    }
+
+    .venn {
+        display: block;
+        border: none;
+        text-decoration: none;
+        color: white;
+
+        position: relative;
+        height: @circle-size;
+        width: @circle-size * 1.5;
+        margin: 0 auto;
+
+        .circle {
+            position: absolute;
+            top: 0;
+            width: @circle-size;
+            height: @circle-size;
+            border-radius: 100%;
+            background-color: rgba(@red, 50%);
+
+            &:first {
+                left: 0;
+            }
+
+            &:nth-child(2n) {
+                right: 0;
+            }
+        }
+
+        .text {
+            position: absolute;
+            top: 50%;
+            margin-top: -20px;
+            font-size: 20px;
+            width: 120px;
+
+            &.left {
+                left: 15px;
+            }
+
+            &.middle {
+                left: 50%;
+                margin-left: -60px;
+                margin-top: -10px;
+            }
+
+            &.right {
+                right: 15px;
+            }
+        }
+    }
+
+    .home {
+        border: 3px solid @red;
+        color: @red;
+        text-decoration: none;
+        padding: 10px;
+        font-weight: bold;
+        font-size: 22px;
+        margin-top: 40px;
+        display: inline-block;
+        .transition(background .3s ease);
+
+        &:hover {
+            background: white;
+            .transition(background .3s ease);
+        }
+    }
+}

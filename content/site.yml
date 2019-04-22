@@ -2,6 +2,11 @@ title: schwarzkopfb
 tagline: the guy who solves problems from CSS to NoSQL Database Clusters
 
 pages:
+  home:
+    theme: red
+    content: about
+    link: /
+    hidden: true
   about:
     theme: red
     link: /about
@@ -23,7 +28,7 @@ pages:
     link: /contact
   404:
     hidden: true
-    theme: red
-    link: /404
+    theme: '404'
+    link: '/404'
 
 footer: Found a typo? <a href="https://github.com/schwarzkopfb/schwarzkopfb.io" target="_blank">Please, let me know!</a>

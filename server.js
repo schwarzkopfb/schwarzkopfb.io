@@ -19,6 +19,13 @@ function serveAssets(...paths) {
 app.use(serveAssets('dist'))
 app.use(serveAssets('static'))
 
+// there is a 404 page in `site.yml`, so
+// this handler must be placed before `/:page`
+app.get('/404', (req, res) => {
+    res.statusCode = 404
+    serve(res, 'dist', 'index.html')
+})
+
 app.get('/:page', (req, res, next) => {
     if (req.params.page in pages)
         serve(res, 'dist', 'index.html')

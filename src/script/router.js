@@ -51,7 +51,15 @@ function notifyComponentLoaded(getComp, fn) {
     return () => {
         return getComp().then(comp => {
             comp = comp.default // es6 module
-            comp.mounted = fn
+            const orig = comp.mounted
+
+            comp.mounted = () => {
+                if (typeof orig === 'function')
+                    orig()
+
+                fn()
+            }
+
             return comp
         })
     }
