@@ -1,0 +1,111 @@
+@import './constants';
+@import './utils';
+
+@base-value: 30px;
+
+@width: @base-value * 2 * 1.732;
+@height: @base-value * 2;
+
+@hexagon-width: @width;
+@hexagon-height: @height * 2;
+
+#spinner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: white;
+    z-index: 100;
+    opacity: 1;
+
+    .transition(opacity .5s ease);
+
+    &.fade-out {
+        opacity: 0;
+    }
+
+    .doubleBounce {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -@hexagon-height / 2;
+        margin-left: -@hexagon-width / 2;
+
+        width: @hexagon-width;
+        height: @hexagon-height;
+
+        .hexagon {
+            position: absolute;
+            width: @width;
+            height: @height;
+            border-radius: 5px;
+            opacity: .2;
+
+            top: @base-value;
+
+            animation: doubleBounce 2s infinite ease-in-out, colors 4s infinite ease-in-out;
+
+            &:before, &:after {
+                position: absolute;
+                width: inherit;
+                height: inherit;
+                border-radius: inherit;
+                background: inherit;
+                content: ' ';
+            }
+
+            &:before {
+                .transform(rotate(60deg));
+            }
+
+            &:after {
+                .transform(rotate(-60deg));
+            }
+
+            &:nth-child(2) {
+                animation-delay: -1s;
+            }
+        }
+    }
+}
+
+@keyframes doubleBounce {
+    0% {
+        .transform(scale(0.2));
+    }
+
+    50% {
+        .transform(scale(1));
+    }
+
+    100% {
+        .transform(scale(0.2));
+    }
+}
+
+@keyframes colors {
+    0% {
+        background-color: @blue;
+    }
+
+    20% {
+        background-color: @purple;
+    }
+
+    40% {
+        background-color: @red;
+    }
+
+    60% {
+        background-color: @orange;
+    }
+
+    80% {
+        background-color: @green;
+    }
+
+    100% {
+        background-color: @blue;
+    }
+}
