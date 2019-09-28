@@ -1,21 +1,24 @@
 const MENU_HEIGHT = 100
 
+import Vue from 'vue'
+
 import skrollr from './skrollr'
 import content from './content'
 
 import bgLayer from '../views/bg-layer'
+import scrollDown from '../views/scroll-down'
 
 export default {
-    components: { bgLayer },
+    components: { bgLayer, scrollDown },
 
     data: () => ({
-        skrollr: null,
+        contentTop: 0,
         content
     }),
 
     methods: {
         adjustContentTop() {
-            this.$refs.content.style.marginTop = `${window.innerHeight + MENU_HEIGHT}px`
+            this.contentTop = window.innerHeight + MENU_HEIGHT  + 'px'
         },
 
         getMenuItemDynamicSkrollrAttributes(i) {
@@ -29,12 +32,12 @@ export default {
 
     created() {
         this.$router.init(content.pages)
-        this.$router.$on('page:mounted', () => this.skrollr.refresh())
+        this.$router.$on('page:mounted', () => this.$skrollr.refresh())
     },
 
     mounted() {
         // initialize Skrollr and store instance
-        this.skrollr = skrollr.init({ forceHeight: false })
+        Vue.prototype.$skrollr = skrollr.init({ forceHeight: false })
 
         // adjust content layer position to window size
         this.adjustContentTop()

@@ -1,4 +1,4 @@
-<style src="../style/counter.less" lang="less" />
+<style src="../style/counter.less" lang="less"></style>
 
 <script>
     export default {
@@ -22,6 +22,7 @@
              data-50-center-center="top: 100px"
              :data-anchor-target="target"
              :style="{ 'z-index': count - index }"
+             :key="label"
         >
             <span>{{ label }}</span>
         </div>

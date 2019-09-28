@@ -35,13 +35,15 @@
                     </li>
                 </ul>
             </div>
+
+            <scroll-down />
         </header>
 
         <bg-layer />
         <bg-layer end="top[sqrt]: -100px" />
         <bg-layer end="top[sqrt]: -250px" />
 
-        <div ref="content"
+        <div :style="{ marginTop: contentTop }"
              class="content"
              data-0="opacity: 0"
              data-400="opacity: 1"
