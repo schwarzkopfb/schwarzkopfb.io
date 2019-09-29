@@ -40,7 +40,7 @@
     "url": "git+https://github.com/schwarzkopfb/schwarzkopfb.io.git"
   },
   "author": "Balazs Svarczkopf",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/schwarzkopfb/schwarzkopfb.io/issues"
   },

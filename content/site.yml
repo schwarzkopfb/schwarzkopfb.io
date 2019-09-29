@@ -31,4 +31,11 @@ pages:
     theme: '404'
     link: '/404'
 
-footer: Found a typo? <a href="https://github.com/schwarzkopfb/schwarzkopfb.io" target="_blank">Please, let me know!</a>
+footer: >
+  Found a typo? 
+  <a href="https://github.com/schwarzkopfb/schwarzkopfb.io" target="_blank">
+    Please, let me know!
+  </a>
+  <br/><br/>
+  site design and content © 2019 Balázs Schwarzkopf</br>
+  source is licensed under <a href="https://opensource.org/licenses/MIT" target="_blank">MIT</a>
