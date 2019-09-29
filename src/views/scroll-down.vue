@@ -22,7 +22,7 @@
             .transition(color .3s, opacity .6s;);
 
             &:hover {
-                opacity: .75;
+                opacity: .65;
             }
 
             span {
