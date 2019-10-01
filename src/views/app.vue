@@ -25,9 +25,9 @@
                  </div>
 
                 <ul class="menu-foreground">
-                    <li v-for="(item, i) in content.pages"
-                        v-if="!item.hidden"
+                    <li v-for="(item, i) in menuItems"
                         v-bind="getMenuItemDynamicSkrollrAttributes(i)"
+                        :key="item.title"
                     >
                         <nav-link :to="item.link"
                                   v-html="item.label"
@@ -53,6 +53,7 @@
             </transition>
         </div>
 
-        <footer v-html="content.footer"></footer>
+        <footer v-if="$router.page.footer"
+                v-html="content.footer"></footer>
     </div>
 </template>

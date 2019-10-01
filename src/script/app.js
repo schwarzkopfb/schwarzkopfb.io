@@ -13,7 +13,8 @@ export default {
 
     data: () => ({
         contentTop: 0,
-        content
+        content,
+        menuItems: content.pages.filter(p => !p.hidden)
     }),
 
     methods: {

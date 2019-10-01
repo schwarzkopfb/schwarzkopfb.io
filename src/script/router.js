@@ -31,6 +31,12 @@ const router = {
             else
                 page = this.getMenuItemByLink(page)
 
+            if (!page)
+                page = this.getMenuItemByLink('/404')
+
+            if (!page)
+                return
+
             this.page = page
 
             return page.link

@@ -30,6 +30,7 @@ pages:
     hidden: true
     theme: '404'
     link: '/404'
+    footer: false
 
 footer: >
   Found a typo? 

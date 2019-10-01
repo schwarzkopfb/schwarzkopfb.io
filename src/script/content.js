@@ -12,7 +12,8 @@ result.tagline = tagline
 // parse pages
 for (let [ key, value ] of Object.entries(pages)) {
     const item = { title, tagline }
-    let content = key
+    let content = key,
+        footer = true
 
     if (typeof value === 'object') {
         // fallback to item key if not specified
@@ -28,8 +29,11 @@ for (let [ key, value ] of Object.entries(pages)) {
         item.tagline = value.tagline || tagline
 
         // use content key from config if explicitly specified
-        if (value.content)
+        if ('content' in value)
             content = value.content
+
+        if ('footer' in value)
+            footer = value.footer
     }
     else {
         // not specified, so fallback to main theme
@@ -40,6 +44,7 @@ for (let [ key, value ] of Object.entries(pages)) {
 
     item.component = () => import(`../../content/pages/${content}`)
     item.hidden = value.hidden
+    item.footer = footer
     item.theme = itemTheme
     item.label = label
     item.link = link
