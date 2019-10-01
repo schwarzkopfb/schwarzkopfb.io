@@ -1,4 +1,4 @@
-<style src="../style/counter.less" lang="less"></style>
+<style src="../style/counter.less" lang="less" scoped></style>
 
 <script>
     export default {
@@ -15,7 +15,7 @@
 </script>
 
 <template>
-    <div id="counter">
+    <div class="counter">
         <div v-for="(target, label, index) of data"
              class="year"
              data--50-center-center="top: -1px"
