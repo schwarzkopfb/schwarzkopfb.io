@@ -1,3 +1,5 @@
+<style src="../style/bg-layer.less" lang="less" scoped></style>
+
 <script>
     export default {
         props: {
