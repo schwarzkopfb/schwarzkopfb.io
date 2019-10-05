@@ -24,8 +24,8 @@
 <template>
     <div class="layer" :data-100="start" :data-end="end">
         <template v-for="n in 30">
-            <div v-if="shouldBreak()" class="break"></div>
-            <div v-else class="hex"></div>
+            <div v-if="shouldBreak()" class="break" :key="n"></div>
+            <div v-else class="hex" :key="n"></div>
         </template>
     </div>
 </template>
