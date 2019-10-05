@@ -3,7 +3,6 @@
 import Vue from 'vue'
 import app from './views/app'
 import router from './script/router'
-import onload from './script/onload'
 
 Vue.use(router)
 
@@ -12,7 +11,7 @@ new Vue({
     render: h => h(app)
 })
 
-onload(() => {
+window.addEventListener('load', () => {
     console.log(`
 
 Welcome here!

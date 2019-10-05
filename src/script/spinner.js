@@ -1,6 +1,4 @@
-import onload from './onload'
-
-onload(() => {
+window.addEventListener('load', () => {
     const el = document.querySelector('#spinner')
     el.classList.add('fade-out')
 
