@@ -38,7 +38,10 @@ export default {
 
     mounted() {
         // initialize Skrollr and store instance
-        Vue.prototype.$skrollr = skrollr.init({ forceHeight: false })
+        Vue.prototype.$skrollr = skrollr.init({ 
+            forceHeight: false,
+            skrollrBody: 'main'
+        })
 
         // adjust content layer position to window size
         this.adjustContentTop()

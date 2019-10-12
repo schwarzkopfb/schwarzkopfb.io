@@ -20,13 +20,15 @@
     }
 
     .hex {
-        position: relative;
-        margin-top: 30px;
-        display: inline-block;
-        outline: 1px solid transparent;
-        .hexagon();
+      position: relative;
+      margin-top: 30px;
+      display: inline-block;
+      outline: 1px solid transparent;
+      .hexagon();
 
+      &, &:before, &:after {
         .transition(background-color .3s);
+      }
 
       & {
         transform: rotate(2.75deg);
