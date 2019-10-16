@@ -6,9 +6,22 @@ import router from './script/router'
 
 Vue.use(router)
 
-new Vue({ render: h => h(app) }).$mount('#app', true)
+window.addEventListener('DOMContentLoaded', () => {
+    new Vue({ render: h => h(app) }).$mount('#app', true)
+})
 
 window.addEventListener('load', () => {
+    // hide spinner (but only when we're not in pre-render stage)
+    if (typeof renderContext === 'undefined') {
+        const el = document.querySelector('#spinner')
+        el.classList.add('fade-out')
+
+        setTimeout(function() {
+            el.parentNode.removeChild(el)
+        }, 500)
+    }
+
+    // display welcome message for developers
     console.log(`
 
 Welcome here!
