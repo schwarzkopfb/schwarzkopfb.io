@@ -13,7 +13,7 @@ function serve(res, ...paths) {
 }
 
 function serveAssets(...paths) {
-    return express.static(resolve(__dirname, ...paths))
+    return express.static(resolve(__dirname, ...paths), { redirect: false })
 }
 
 app.use(serveAssets('dist'))
@@ -23,12 +23,14 @@ app.use(serveAssets('static'))
 // this handler must be placed before `/:page`
 app.get('/404', (req, res) => {
     res.statusCode = 404
-    serve(res, 'dist', 'index.html')
+    serve(res, 'dist', '404', 'index.html')
 })
 
 app.get('/:page', (req, res, next) => {
-    if (req.params.page in pages)
-        serve(res, 'dist', 'index.html')
+    const { page } = req.params
+
+    if (page in pages)
+        serve(res, 'dist', page, 'index.html')
     else
         next()
 })

@@ -6,10 +6,7 @@ import router from './script/router'
 
 Vue.use(router)
 
-new Vue({
-    el: '#app',
-    render: h => h(app)
-})
+new Vue({ render: h => h(app) }).$mount('#app', true)
 
 window.addEventListener('load', () => {
     console.log(`

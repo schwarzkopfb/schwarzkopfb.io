@@ -3,7 +3,8 @@
 <style src="../style/app.less" lang="less"></style>
 
 <template>
-    <div id="main" :data-theme="$router.page.theme">
+    <div>
+        <div id="main" :data-theme="$router.page.theme">
         <header data-0="bottom: 0%;" data-500="bottom: 100%;">
             <div class="background">
                 <div v-html="$router.page.title"
@@ -55,5 +56,7 @@
 
         <footer v-if="$router.page.footer"
                 v-html="content.footer"></footer>
+
+        </div>
     </div>
 </template>

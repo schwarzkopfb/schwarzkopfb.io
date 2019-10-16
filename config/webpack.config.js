@@ -1,10 +1,14 @@
 'use strict'
 
-const path = require('path'),
-      { readFile } = require('fs').promises,
+const fs = require('fs'),
+      path = require('path'),
+      { readFile } = fs.promises,
+      yaml = require('yaml'),
       less = require('less'),
+      { pages } = yaml.parse(fs.readFileSync(pathTo('content', 'site.yml'), 'utf8')),
       VueLoaderPlugin = require('vue-loader/lib/plugin'),
-      HtmlWebpackPlugin = require('html-webpack-plugin')
+      HtmlWebpackPlugin = require('html-webpack-plugin'),
+      PrerenderSPAPlugin = require('prerender-spa-plugin')
 
 // this file is under 'config' folder
 function pathTo(...relativePaths) {
@@ -79,6 +83,10 @@ module.exports = () => {
                                     spinnerCss,
                                     spinnerJs
                                 }
+                            }),
+                            new PrerenderSPAPlugin({
+                                staticDir: pathTo('dist'),
+                                routes: Object.values(pages).map(p => p.link)
                             })
                         ],
                         resolve: {

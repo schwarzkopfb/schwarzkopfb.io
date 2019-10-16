@@ -20,6 +20,7 @@
     "json-loader": "^0.5.7",
     "less": "^3.9.0",
     "less-loader": "^4.1.0",
+    "prerender-spa-plugin": "^3.4.0",
     "vmark": "^1.0.2",
     "vmark-loader": "^1.0.0",
     "vue": "^2.6.10",
