@@ -50,7 +50,10 @@ module.exports = () => ({
                 test: /\.js$/,
                 loader: 'babel-loader',
                 options: {
-                    plugins: [ '@babel/plugin-syntax-dynamic-import' ]
+                    plugins: [ 
+                        '@babel/plugin-syntax-dynamic-import',
+                        'transform-async-to-promises'
+                    ]
                 }
             },
             {
