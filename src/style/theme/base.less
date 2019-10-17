@@ -1,7 +1,7 @@
-@import './utils';
+@import '../utils';
 
 .theme(@name, @color) {
-  &[data-theme=@{name}] {
+  #main[data-theme=~"@{name}"] {
     ::selection {
       background: @color;
       color: #fff;

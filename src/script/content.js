@@ -13,15 +13,17 @@ result.tagline = tagline
 for (let [ key, value ] of Object.entries(pages)) {
     const item = { title, tagline }
     let content = key,
-        footer = true
+        footer = true,
+        itemTheme
 
     if (typeof value === 'object') {
         // fallback to item key if not specified
         var label = value.label || key,
-            // fallback to main theme if not specified
-            itemTheme = value.theme || theme,
             // destructure link from item descriptor object
             { link } = value
+
+        // fallback to main theme if not specified
+        itemTheme = value.theme || theme,
 
         // fallback to main title if not specified
         item.title = value.title || title
@@ -42,7 +44,10 @@ for (let [ key, value ] of Object.entries(pages)) {
         link = value
     }
 
-    item.component = () => import(`../../content/pages/${content}`)
+    item.component = async () => {
+        await import(`../style/theme/${itemTheme}.less`)
+        return import(`../../content/pages/${content}.md`)
+    }
     item.hidden = value.hidden
     item.footer = footer
     item.theme = itemTheme
