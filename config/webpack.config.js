@@ -4,6 +4,7 @@ const { resolve, basename } = require('path'),
       { readFileSync } = require('fs'),
       { pages } = require('yaml').parse(readFileSync(pathTo('content', 'site.yml'), 'utf8')),
       CopyPlugin = require('copy-webpack-plugin'),
+      CleanCSSPlugin = require('less-plugin-clean-css'),
       VueLoaderPlugin = require('vue-loader/lib/plugin'),
       HtmlWebpackPlugin = require('html-webpack-plugin'),
       PrerenderSPAPlugin = require('prerender-spa-plugin'),
@@ -35,7 +36,14 @@ module.exports = () => ({
                 use: [
                     'vue-style-loader',
                     'css-loader',
-                    'less-loader'
+                    {
+                        loader: 'less-loader',
+                        options: {
+                            plugins: [
+                                new CleanCSSPlugin({ advanced: true })
+                            ]
+                        }
+                    }
                 ]
             },
             {
@@ -66,7 +74,10 @@ module.exports = () => ({
         new HtmlWebpackPlugin({
             hash: true,
             filename: pathTo('dist', 'index.html'),
-            template: pathTo('src', 'template', 'app.html')
+            template: pathTo('src', 'template', 'app.html'),
+            minify: {
+                collapseWhitespace: true
+            }
         }),
         new PrerenderSPAPlugin({
             staticDir: pathTo('dist'),
