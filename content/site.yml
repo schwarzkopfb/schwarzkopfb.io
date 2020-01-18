@@ -25,6 +25,7 @@ pages:
     tagline: hellooo&nbsp;<strong>world</strong>
   contact:
     theme: orange
+    tagline: testing Apex Up
     link: /contact
   404:
     hidden: true
