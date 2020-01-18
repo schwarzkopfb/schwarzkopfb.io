@@ -31,10 +31,9 @@ jobs:
       working-directory: ./repo
       run: npm prune --production
     - name: deploy
-      working-directory: ./repo
       uses: apex/actions/up@master
       with: 
-        args: deploy staging --no-build
+        args: deploy staging --no-build -C ./repo
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
