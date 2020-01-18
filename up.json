@@ -8,5 +8,8 @@
     "staging": {
       "domain": "beta.schwarzkopfb.io"
     }
+  },
+  "hooks": {
+    "build": "# disable auto-fallback to `npm run build`, because --no-build cli arg is ignored in apex/actions/up"
   }
 }
