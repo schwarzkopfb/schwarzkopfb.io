@@ -1,6 +1,9 @@
-name: Build and deploy to AWS
+name: Build and deploy to AWS (staging)
 
-on: [push]
+on:
+  push:
+    branches:    
+      - master
 
 jobs:
   build:
@@ -10,21 +13,25 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        ref: 'master'
+        ref: master
+        path: ./repo
     - uses: ianwalter/puppeteer@v2.0.0
     - name: Use Node.js 10.x
       uses: actions/setup-node@v1
       with:
         node-version: 10.x
     - name: npm install & build
+      working-directory: ./repo
       run: |
         npm ci
         npm run build
       env:
         CI: true
     - name: cleanup
+      working-directory: ./repo
       run: npm prune --production
     - name: deploy
+      working-directory: ./repo
       uses: apex/actions/up@master
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
