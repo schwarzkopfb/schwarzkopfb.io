@@ -1,4 +1,4 @@
-name: Node CI
+name: Build and deploy to AWS
 
 on: [push]
 
@@ -7,21 +7,26 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [10.x, 12.x]
-
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
+      with:
+        ref: 'master'
     - uses: ianwalter/puppeteer@v2.0.0
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: Use Node.js 10.x
       uses: actions/setup-node@v1
       with:
-        node-version: ${{ matrix.node-version }}
-    - name: npm install, build, and test
+        node-version: 10.x
+    - name: npm install & build
       run: |
         npm ci
         npm run build
-#        npm test
       env:
         CI: true
+    - name: cleanup
+      run: npm prune --production
+    - name: deploy
+      uses: apex/actions/up@master
+      args: deploy staging
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}

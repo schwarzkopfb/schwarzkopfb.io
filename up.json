@@ -1,0 +1,15 @@
+{
+  "name": "schwarzkopfb-io",
+  "profile": "default",
+  "regions": [
+    "eu-west-3"
+  ],
+  "hooks": {
+    "build": "# disable auto-fallback to `npm run build`"
+  },
+  "stages": {
+    "staging": {
+      "domain": "beta.schwarzkopfb.io"
+    }
+  }
+}
