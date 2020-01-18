@@ -12,8 +12,7 @@ jobs:
       with:
         ref: 'master'
     - uses: ianwalter/puppeteer@v2.0.0
-    - name: Install Apex Up
-      run: curl -sf https://up.apex.sh/install | sh
+    - uses: apex/actions/up@master
     - name: Use Node.js 10.x
       uses: actions/setup-node@v1
       with:
