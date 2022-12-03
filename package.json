@@ -22,7 +22,7 @@
     "less-loader": "^4.1.0",
     "less-plugin-clean-css": "^1.5.1",
     "prerender-spa-plugin": "^3.4.0",
-    "vmark": "^1.0.2",
+    "vmark": "^1.2.0",
     "vmark-loader": "^1.0.0",
     "vue": "^2.6.10",
     "vue-loader": "^15.7.0",
