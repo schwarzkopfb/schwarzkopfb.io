@@ -4,7 +4,7 @@
   "description": "Personal Home Page",
   "main": "server.js",
   "dependencies": {
-    "serve-handler": "^6.1.2"
+    "serve-handler": "^6.1.5"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",
